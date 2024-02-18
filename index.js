@@ -13,6 +13,9 @@ function changeSundayToMonday(date) {
 
 function nextMonday() {
     const currentDate = new Date();
+//test to simulate day of session. REMOVE
+    currentDate.setDate(currentDate.getDate() + 1);
+
     const currentDay = changeSundayToMonday(currentDate);
     const daysToMonday = 7 - currentDay;
     currentDate.setDate(currentDate.getDate() + daysToMonday);
@@ -47,6 +50,7 @@ function getWeekNumber(date) {
 let language = 'no-NO';
 const nextWeek = getWeekNumber(nextMonday());
 //const nextWeek = getCurrentWeek() + 2;
+console.log(getCurrentWeek());
 let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 if (nextWeek % 2 === 0) {
     //document.getElementById('nextSession').innerHTML = `Neste session er ${nextMonday().toDateString()}`;

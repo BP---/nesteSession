@@ -72,16 +72,17 @@ function celebrate() {
 
 
 let language = 'no-NO';
+let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const nextWeek = getWeekNumber(nextMonday());
 //const nextWeek = getCurrentWeek() + 2;
 const day = new Date();
-day.setDate(day.getDate() + 1); //test to simulate day of session. REMOVE
+//day.setDate(day.getDate() + 1); //test to simulate day of session. REMOVE
 console.log(day);
 
 if (isSession(day)) {
     celebrate();
 } else {
-    let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    
     if (nextWeek % 2 === 0) {
         //document.getElementById('nextSession').innerHTML = `Neste session er ${nextMonday().toDateString()}`;
 
@@ -89,7 +90,7 @@ if (isSession(day)) {
         document.getElementById('dagerTil').innerHTML = `Dager til neste session: ${daysBetweenDates(getCurrentDate(), nextMonday())}`;
     } else {
         const utsattSession = new Date(nextMonday().setDate(nextMonday().getDate() + 7));
-        document.getElementById('nextSession').innerHTML = `Neste session er ${utsattSession.toDateString()}`;
+        document.getElementById('nextSession').innerHTML = `Neste session er ${utsattSession.toLocaleDateString(language, options)}`;
         document.getElementById('dagerTil').innerHTML = `Dager til neste session: ${daysBetweenDates(getCurrentDate(), utsattSession)}`;
 
     }

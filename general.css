@@ -18,5 +18,9 @@ body {
   #liste {
     text-align: left;
   }
+  #session {
+    color: red;
+    text-shadow: 2px 2px 4px #000000;
+  }
   
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');

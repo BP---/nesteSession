@@ -5,10 +5,16 @@ function getCurrentDate() {
   return currentDate;
 }
 
+//stupid start week on sunday fix
+function changeSundayToMonday(date) {
+    let dayOfWeek = date.getDay();
+    return dayOfWeek === 0 ? 6 : dayOfWeek - 1;
+}
+
 function nextMonday() {
     const currentDate = new Date();
-    const currentDay = currentDate.getDay();
-    const daysToMonday = 8 - currentDay;
+    const currentDay = changeSundayToMonday(currentDate);
+    const daysToMonday = 7 - currentDay;
     currentDate.setDate(currentDate.getDate() + daysToMonday);
     return currentDate;
 }

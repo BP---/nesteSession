@@ -11,10 +11,9 @@ function changeSundayToMonday(date) {
     return dayOfWeek === 0 ? 6 : dayOfWeek - 1;
 }
 
-function nextMonday() {
-    const currentDate = new Date();
-//test to simulate day of session. REMOVE
-    currentDate.setDate(currentDate.getDate() + 1);
+function nextMonday(date) {
+    const currentDate = new Date(date);
+
 
     const currentDay = changeSundayToMonday(currentDate);
     const daysToMonday = 7 - currentDay;
@@ -73,10 +72,11 @@ function celebrate() {
 
 let language = 'no-NO';
 let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-const nextWeek = getWeekNumber(nextMonday());
-//const nextWeek = getCurrentWeek() + 2;
 const day = new Date();
-//day.setDate(day.getDate() + 1); //test to simulate day of session. REMOVE
+const nextWeek = getWeekNumber(nextMonday(day));
+//const nextWeek = getCurrentWeek() + 2;
+
+day.setDate(day.getDate() + 1); //test to simulate different days. Use as needed
 console.log(day);
 
 if (isSession(day)) {
@@ -84,12 +84,12 @@ if (isSession(day)) {
 } else {
     
     if (nextWeek % 2 === 0) {
-        //document.getElementById('nextSession').innerHTML = `Neste session er ${nextMonday().toDateString()}`;
+        //document.getElementById('nextSession').innerHTML = `Neste session er ${nextMonday(day).toDateString()}`;
 
-        document.getElementById('nextSession').innerHTML = `Neste session er ${nextMonday().toLocaleDateString(language, options)}`;
-        document.getElementById('dagerTil').innerHTML = `Dager til neste session: ${daysBetweenDates(getCurrentDate(), nextMonday())}`;
+        document.getElementById('nextSession').innerHTML = `Neste session er ${nextMonday(day).toLocaleDateString(language, options)}`;
+        document.getElementById('dagerTil').innerHTML = `Dager til neste session: ${daysBetweenDates(getCurrentDate(), nextMonday(day))}`;
     } else {
-        const utsattSession = new Date(nextMonday().setDate(nextMonday().getDate() + 7));
+        const utsattSession = new Date(nextMonday(day).setDate(nextMonday(day).getDate() + 7));
         document.getElementById('nextSession').innerHTML = `Neste session er ${utsattSession.toLocaleDateString(language, options)}`;
         document.getElementById('dagerTil').innerHTML = `Dager til neste session: ${daysBetweenDates(getCurrentDate(), utsattSession)}`;
 

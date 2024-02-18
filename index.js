@@ -62,6 +62,8 @@ function celebrate() {
     heading.id = 'session';
     heading.textContent = 'FUCK YES!';
     document.body.appendChild(heading);
+    document.body.style.backgroundColor = '#000000';
+    document.querySelector('.fireworkContainer').removeAttribute('hidden');
 
 }
 
@@ -74,7 +76,7 @@ const nextWeek = getWeekNumber(nextMonday());
 //const nextWeek = getCurrentWeek() + 2;
 const day = new Date();
 day.setDate(day.getDate() + 1); //test to simulate day of session. REMOVE
-console.log(getCurrentWeek());
+console.log(day);
 
 if (isSession(day)) {
     celebrate();

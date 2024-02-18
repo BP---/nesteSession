@@ -59,7 +59,8 @@ function celebrate() {
         container.innerHTML = '';
     }
     const heading = document.createElement('h1');
-    heading.textContent = 'Session i dag!';
+    heading.id = 'session';
+    heading.textContent = 'FUCK YES!';
     document.body.appendChild(heading);
 
 }

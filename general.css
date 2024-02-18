@@ -19,8 +19,11 @@ body {
     text-align: left;
   }
   #session {
-    color: red;
-    text-shadow: 2px 2px 4px #000000;
+    color: #bb0a1e;
+    text-shadow: 8px 15px 4px #000000;
+    font-style: oblique;
+    font-weight: bolder;
+    font-size: 15vw; 
   }
   
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');

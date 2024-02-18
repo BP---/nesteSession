@@ -73,12 +73,13 @@ function celebrate() {
 let language = 'no-NO';
 let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const day = new Date();
-const nextWeek = getWeekNumber(nextMonday(day));
+
 //const nextWeek = getCurrentWeek() + 2;
 
-day.setDate(day.getDate() + 1); //test to simulate different days. Use as needed
+//day.setDate(day.getDate() + 1); //test to simulate different days. Use as needed
 console.log(day);
-
+const nextWeek = getWeekNumber(nextMonday(day));
+console.log(nextWeek);
 if (isSession(day)) {
     celebrate();
 } else {
@@ -87,11 +88,11 @@ if (isSession(day)) {
         //document.getElementById('nextSession').innerHTML = `Neste session er ${nextMonday(day).toDateString()}`;
 
         document.getElementById('nextSession').innerHTML = `Neste session er ${nextMonday(day).toLocaleDateString(language, options)}`;
-        document.getElementById('dagerTil').innerHTML = `Dager til neste session: ${daysBetweenDates(getCurrentDate(), nextMonday(day))}`;
+        document.getElementById('dagerTil').innerHTML = `Dager til neste session: ${daysBetweenDates(day, nextMonday(day))}`;
     } else {
         const utsattSession = new Date(nextMonday(day).setDate(nextMonday(day).getDate() + 7));
         document.getElementById('nextSession').innerHTML = `Neste session er ${utsattSession.toLocaleDateString(language, options)}`;
-        document.getElementById('dagerTil').innerHTML = `Dager til neste session: ${daysBetweenDates(getCurrentDate(), utsattSession)}`;
+        document.getElementById('dagerTil').innerHTML = `Dager til neste session: ${daysBetweenDates(day, utsattSession)}`;
 
     }
 

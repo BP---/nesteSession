@@ -29,6 +29,8 @@ body {
   
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+
+  /* credit for fireworks goes to https://codepen.io/xboxyan/pen/qBjWEPO?editors */
   .fireworks {
     position: absolute;
     width: 150px;

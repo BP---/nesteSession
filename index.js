@@ -96,6 +96,7 @@ if (isSession(day)) {
 
     }
 
+    /*
     //document.getElementById('ytring').innerHTML = `Håkon brøt magien i universet ${Math.floor(Math.random() * (10 - 2 + 1)) + 2} ganger med sin forrige ytring`;
     const listeDiv = document.getElementById('liste');
     const liste = document.createElement('ul');
@@ -109,4 +110,6 @@ if (isSession(day)) {
     const listeElement3 = document.createElement('li');
     listeElement3.textContent = `Viva la Dirt League: ${Math.floor(Math.random() * (10 - 2 + 1)) + 2}`;
     liste.appendChild(listeElement3);
+    */
+   
 }

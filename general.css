@@ -1,13 +1,17 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
     font-family: 'Roboto', sans-serif;
-    overflow: hidden;
+    overflow: auto;
   }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
   
   .container {
     text-align: center;
@@ -25,6 +29,15 @@ body {
     font-style: oblique;
     font-weight: bolder;
     font-size: 15vw; 
+  }
+
+  li {
+    
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    list-style:disc;
+    list-style-type: '\1F4DC'; 
   }
   
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');

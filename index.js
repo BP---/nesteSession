@@ -96,6 +96,7 @@ if (isSession(day)) {
 
     }
 
+    /*
     //document.getElementById('ytring').innerHTML = `Håkon brøt magien i universet ${Math.floor(Math.random() * (10 - 2 + 1)) + 2} ganger med sin forrige ytring`;
     const listeDiv = document.getElementById('liste');
     const liste = document.createElement('ul');
@@ -109,4 +110,23 @@ if (isSession(day)) {
     const listeElement3 = document.createElement('li');
     listeElement3.textContent = `Viva la Dirt League: ${Math.floor(Math.random() * (10 - 2 + 1)) + 2}`;
     liste.appendChild(listeElement3);
+    */
+
+    const attempts = [["Basilisk", "Ravn", "Orm", "Skarabe"],["Basilisk", "Fønix", "Orm", "Skarabe"], ["Basilisk","Skarabe","Orm","Skarabe"], ["Basilisk","Skarabe","Bjørn","Orm"], ["Rev","Skarabe","Bjørn","Orm"]];
+    document.getElementById('ytring').innerHTML = 'Puzzle: "Du vil aldri se meg. Evig hvilested. Seng av Jord og gjørme."';
+    const solutions = puzzle();
+    
+    for (let i = 0; i < solutions.length; i++) {
+        let solution = document.createElement('li');
+        let attempted = false;
+        for (let j = 0; j < attempts.length; j++) {
+            if (solutions[i].every((val, index) => val === attempts[j][index])) {
+                attempted = true;
+                console.log(solutions[i]);
+                break;
+            }
+        }
+        solution.innerHTML = `${attempted ? '<s>' : ''}${solutions[i][0]}, ${solutions[i][1]}, ${solutions[i][2]}, ${solutions[i][3]}${attempted ? '</s>' : ''}`; 
+        document.getElementById('liste').appendChild(solution);
+    }
 }

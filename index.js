@@ -111,5 +111,8 @@ if (isSession(day)) {
     listeElement3.textContent = `Viva la Dirt League: ${Math.floor(Math.random() * (10 - 2 + 1)) + 2}`;
     liste.appendChild(listeElement3);
     */
-   
+
+    document.getElementById('ytring').innerHTML = "Puzzle:";
+    const solutions = puzzle();
+    console.log(solutions);
 }

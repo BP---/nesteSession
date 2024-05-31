@@ -112,12 +112,21 @@ if (isSession(day)) {
     liste.appendChild(listeElement3);
     */
 
+    const attempts = [["Basilisk", "Ravn", "Orm", "Skarabe"],["Basilisk", "Fønix", "Orm", "Skarabe"], ["Basilisk","Skarabe","Orm","Skarabe"], ["Basilisk","Skarabe","Bjørn","Orm"], ["Rev","Skarabe","Bjørn","Orm"]];
     document.getElementById('ytring').innerHTML = "Puzzle:";
     const solutions = puzzle();
     console.log(solutions);
     for (let i = 0; i < solutions.length; i++) {
         let solution = document.createElement('li');
-        solution.textContent = `${solutions[i][0]}, ${solutions[i][1]}, ${solutions[i][2]}, ${solutions[i][3]}`; 
+        let attempted = false;
+        for (let j = 0; j < attempts.length; j++) {
+            if (solutions[i].every((val, index) => val === attempts[j][index])) {
+                attempted = true;
+                console.log(solutions[i]);
+                break;
+            }
+        }
+        solution.innerHTML = `${attempted ? '<s>' : ''}${solutions[i][0]}, ${solutions[i][1]}, ${solutions[i][2]}, ${solutions[i][3]}${attempted ? '</s>' : ''}`; 
         document.getElementById('liste').appendChild(solution);
     }
 }

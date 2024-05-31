@@ -115,7 +115,7 @@ if (isSession(day)) {
     const attempts = [["Basilisk", "Ravn", "Orm", "Skarabe"],["Basilisk", "Fønix", "Orm", "Skarabe"], ["Basilisk","Skarabe","Orm","Skarabe"], ["Basilisk","Skarabe","Bjørn","Orm"], ["Rev","Skarabe","Bjørn","Orm"]];
     document.getElementById('ytring').innerHTML = "Puzzle:";
     const solutions = puzzle();
-    console.log(solutions);
+    
     for (let i = 0; i < solutions.length; i++) {
         let solution = document.createElement('li');
         let attempted = false;

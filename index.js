@@ -115,4 +115,9 @@ if (isSession(day)) {
     document.getElementById('ytring').innerHTML = "Puzzle:";
     const solutions = puzzle();
     console.log(solutions);
+    for (let i = 0; i < solutions.length; i++) {
+        let solution = document.createElement('li');
+        solution.textContent = `${solutions[i][0]}, ${solutions[i][1]}, ${solutions[i][2]}, ${solutions[i][3]}`; 
+        document.getElementById('liste').appendChild(solution);
+    }
 }

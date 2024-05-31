@@ -1,13 +1,17 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
     font-family: 'Roboto', sans-serif;
-    overflow: hidden;
+    overflow: auto;
   }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
   
   .container {
     text-align: center;

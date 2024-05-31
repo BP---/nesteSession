@@ -113,7 +113,7 @@ if (isSession(day)) {
     */
 
     const attempts = [["Basilisk", "Ravn", "Orm", "Skarabe"],["Basilisk", "Fønix", "Orm", "Skarabe"], ["Basilisk","Skarabe","Orm","Skarabe"], ["Basilisk","Skarabe","Bjørn","Orm"], ["Rev","Skarabe","Bjørn","Orm"]];
-    document.getElementById('ytring').innerHTML = "Puzzle:";
+    document.getElementById('ytring').innerHTML = 'Puzzle: "Du vil aldri se meg. Evig hvilested. Seng av Jord og gjørme."';
     const solutions = puzzle();
     
     for (let i = 0; i < solutions.length; i++) {

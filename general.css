@@ -30,6 +30,15 @@ body {
     font-weight: bolder;
     font-size: 15vw; 
   }
+
+  li {
+    
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    list-style:disc;
+    list-style-type: '\1F4DC'; 
+  }
   
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
